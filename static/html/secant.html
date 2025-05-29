@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>Método da Secante</title>
   <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
   <div class="container">
+    <!-- Botão Voltar -->
+    <a href="/" class="back-btn">
+      <!-- Você pode usar este SVG de seta -->
+      <svg viewBox="0 0 16 16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M11 1 3 8l8 7V9h4V7H11V1z"/>
+      </svg>
+    </a>
+
     <h1>Método da Secante</h1>
     <form id="secant-form" action="/secant/" method="post">
+      <!-- ... seus campos ... -->
       <label>Equação (ex: x**3 - 2*x - 5):
         <input type="text" name="equation" required>
       </label>

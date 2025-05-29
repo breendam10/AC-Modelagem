@@ -5,10 +5,13 @@
   padding: 0;
 }
 
+/* Meta viewport para responsividade (inclua também em cada HTML) */
+/* <meta name="viewport" content="width=device-width, initial-scale=1"> */
+
 /* Background e fonte padrão */
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #f4f6f8;
+  background: #FFEAF2;       /* rosa bebê claro */
   color: #333;
   display: flex;
   justify-content: center;
@@ -19,7 +22,8 @@ body {
 
 /* Container central */
 .container {
-  background: #fff;
+  position: relative;
+  background: #FFF9E6;      /* rosa suave dentro do card */
   padding: 30px 40px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -32,7 +36,25 @@ h1 {
   font-size: 1.75rem;
   margin-bottom: 20px;
   text-align: center;
-  color: #005A9E;
+  color: #D6336C;            /* rosa forte */
+}
+
+/* Parágrafo de instrução */
+.container p {
+  margin-bottom: 24px;
+}
+
+/* Navegação */
+.container nav {
+  margin-top: 24px;
+}
+.container nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.container nav ul li {
+  margin-bottom: 16px;
 }
 
 /* Formulário */
@@ -45,38 +67,52 @@ form label {
 form input {
   width: 100%;
   padding: 8px 10px;
-  margin-top: 4px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
+  margin: 4px 0 16px;
+  border: 1px solid #E8DAB2; /* borda amarela suave */
   border-radius: 4px;
+  background: #fff;
 }
 
-/* Botão principal */
-button {
+/* Remove spinners de number inputs */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Botões (Calcular e links do index) */
+button,
+.button-link {
   display: block;
   width: 100%;
-  background-color: #0078D4;
+  background-color: #FF77A9; /* rosa claro */
   color: #fff;
   border: none;
-  padding: 14px;
+  padding: 12px;             /* igual ao .button-link */
   font-size: 1rem;
   border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
-
-button:hover {
-  background-color: #005A9E;
+button:hover,
+.button-link:hover {
+  background-color: #D6336C; /* rosa forte no hover */
 }
-
-button:active {
+button:active,
+.button-link:active {
   transform: scale(0.98);
 }
 
 /* Área de resultado */
 #result {
-  background: #eef2f5;
-  border: 1px solid #d0d7de;
+  background: #FFFCEB;       /* amarelo bem suave */
+  border: 1px solid #FFE4B5; /* borda amarela clara */
   border-radius: 4px;
   padding: 16px;
   margin-top: 20px;
@@ -85,34 +121,104 @@ button:active {
   font-size: 0.95rem;
 }
 
-.button-link {
-  display: block;
-  text-align: center;
+/* Botão de voltar */
+.back-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
   text-decoration: none;
-  background-color: #0078D4;
-  color: #fff;
-  padding: 12px;
-  border-radius: 4px;
   font-weight: 500;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  color: #D6336C;
+  display: flex;
+  align-items: center;
+}
+.back-btn svg {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+  fill: #D6336C;
+  transition: fill 0.2s;
+}
+.back-btn:hover,
+.back-btn:hover svg {
+  color: #FF77A9;
+  fill: #FF77A9;
 }
 
-.button-link:hover {
-  background-color: #005A9E;
+/* Botão do GitHub */
+.github-btn-container {
+  text-align: center;
+  margin-top: 24px;
+}
+.github-btn {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.github-btn svg {
+  fill: #333;
+  transition: fill 0.2s;
+}
+.github-btn:hover svg {
+  fill: #FF77A9;
 }
 
-.button-link:active {
-  transform: scale(0.98);
+/* Responsividade */
+/* Celulares */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+  .container {
+    padding: 20px;
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  form label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+  form input {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+  button,
+  .button-link {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  .back-btn {
+    top: 12px;
+    left: 12px;
+  }
+  .github-btn-container {
+    margin-top: 16px;
+  }
 }
 
-/* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  body {
+    padding: 30px 15px;
+  }
+  .container {
+    padding: 25px 30px;
+    max-width: 90%;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  form label {
+    font-size: 0.95rem;
+  }
+  form input {
+    padding: 7px 9px;
+  }
+  button,
+  .button-link {
+    font-size: 0.95rem;
+  }
 }
