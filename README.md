@@ -15,7 +15,12 @@
 Este projeto foi desenvolvido para a disciplina de Cálculo Numérico e tem como objetivo implementar dois métodos de resolução de equações não lineares:
 
 * **Método da Falsa Posição**
+![image](https://github.com/user-attachments/assets/4f20a9af-7c40-48d8-a14b-140a2239dde3)
+
 * **Método da Secante**
+![image](https://github.com/user-attachments/assets/4eefd678-45de-4873-9f8b-57cf19334892)
+
+  
 
 Ambos os métodos foram programados em Python para calcular aproximações de raízes de funções reais. Além disso, como etapa opcional para obtenção de bônus, foi criado um **front-end simples**, permitindo que os usuários testem os métodos diretamente no navegador de forma interativa.
 
